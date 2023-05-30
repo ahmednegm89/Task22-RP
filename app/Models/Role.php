@@ -11,12 +11,13 @@ class Role extends Model
 
     protected $fillable = [
         'name',
-        'permissions',
+        'slug',
     ];
 
-    protected $casts = [
-        'permissions' => 'array'
-    ];
+    public function permissions()
+    {
+        return $this->belongsToMany(Permission::class);
+    }
 
     public function users()
     {

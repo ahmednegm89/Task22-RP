@@ -19,13 +19,12 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->name(),
+            'name' => 'admin',
             'email' => 'admin@admin.com',
             'phone' => '01001001001',
             'email_verified_at' => now(),
             'password' => Hash::make('00000000'),
             'img' => 'img01',
-            'role_id' => '1',
             'remember_token' => Str::random(10),
         ];
     }
